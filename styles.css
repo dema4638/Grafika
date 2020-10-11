@@ -1,0 +1,21 @@
+button {
+  display: inline-block;
+  margin-bottom: 30px;
+  padding: 5px 30px;
+  background-color: #a2d5f2;
+  border-radius: 12px;
+  border: none;
+  width: 10%;
+  font-weight: bold;
+  color: #005086;
+
+}
+
+
+button:hover {
+background-color: #318fb5;
+}
+
+canvas {
+  display: block;
+}
