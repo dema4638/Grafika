@@ -1,4 +1,5 @@
 <html>
+
 <head>
   <link rel="stylesheet" href="styles.css">
 
@@ -25,6 +26,7 @@
 
         document.getElementById("next").addEventListener("click", function() {
           if (step1 < 7) {
+            x = 0;
             ctx.save();
             ctx.clearRect(0, 0, 500, 500);
             step1++;
@@ -36,6 +38,7 @@
 
         document.getElementById("previous").addEventListener("click", function() {
           if (step1 > 0) {
+            x = 0;
             ctx.save();
             ctx.clearRect(0, 0, 500, 500);
             document.getElementById("result").innerHTML = "Level: " + (step1 - 1);
@@ -63,30 +66,17 @@
           if (step == (step1 - 1)) {
             ctx.fillStyle = "blue";
           }
-          ctx.transform(0.5, 0, 0, 0.5, 250, 0);
+          ctx.transform(0, -0.5, -0.5, 0, 500, 250);
           drawF(step);
           ctx.restore();
-          if (x == 0) {
-            ctx.transform(0.25, 0, 0, 0.25, 250, 250);
-            ctx.rotate(Math.PI / 2);
-            x++;
             if (step == (step1 - 1)) {
               ctx.fillStyle = "purple";
             }
-            drawF(step);
-            ctx.restore();
-
-          } else {
-            if (step == (step1 - 1)) {
-              ctx.fillStyle = "purple";
-            }
-            ctx.transform(0.25, 0, 0, 0.25, 125, 375);
-            ctx.rotate((Math.PI * 3) / 2);
+            ctx.transform(0, 0.25, -0.25, 0, 250, 250);
             x--;
             drawF(step);
             ctx.restore();
 
-          }
           if (step == (step1 - 1)) {
             ctx.fillStyle = "green";
           }
@@ -98,11 +88,9 @@
       function drawT() {
         ctx.beginPath();
         ctx.moveTo(0, 0);
-        ctx.lineTo(100, 0);
-        ctx.lineTo(100, 250);
-        ctx.lineTo(500, 250);
+        ctx.lineTo(500, 0);
         ctx.lineTo(500, 500);
-        ctx.lineTo(0, 500);
+        ctx.lineTo(0, 0);
         ctx.fill();
         ctx.closePath();
       }
