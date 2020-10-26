@@ -1,4 +1,4 @@
-button {
+.next, .previous{
   display: inline-block;
   margin-bottom: 30px;
   padding: 5px 30px;
@@ -11,11 +11,22 @@ button {
 
 }
 
-
 button:hover {
 background-color: #318fb5;
 }
 
-canvas {
+.canvas {
   display: block;
+  position: relative;
+}
+
+.btn-group{
+  display: block;
+  position: relative;
+}
+
+.level{
+  width: 5%;
+  display: inline-block;
+  text-align: center;
 }
